@@ -1,4 +1,3 @@
-
 const dscc = require('@google/dscc');
 const viz = require('@google/dscc-scripts/viz/initialViz.js');
 const local = require('./localMessage.js');
@@ -8,15 +7,29 @@ const  {ScatterplotLayer} = require('@deck.gl/layers');
 //import {ScatterplotLayer} from '@deck.gl/layers';
 // change this to 'true' for local development
 // change this to 'false' before deploying
-export const LOCAL = false;
-var chartElement = document.createElement('div');
-chartElement.id = 'container';
-document.body.appendChild(chartElement);
+export const LOCAL = true;
+
+// create and add the canvas
 var canvasElement = document.createElement('canvas');
-var ctx = canvasElement.getContext('2d');
-canvasElement.id = 'container';
-document.body.appendChild(canvasElement);
+// var ctx = canvasElement.getContext('2d');
+// canvasElement.id = 'container';
+// //document.body.appendChild(canvasElement);
+
+
 const drawViz = (data) => {
+  
+  var height = dscc.getHeight();
+  var width = dscc.getWidth();
+  // clear the canvas
+  var ctx = canvasElement.getContext('2d');
+
+  // clear the canvas.
+  ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+
+  // set the canvas width and height
+  ctx.canvas.width = dscc.getWidth();
+  ctx.canvas.height = dscc.getHeight();
+  // code
   var data1 = data.tables.DEFAULT;
   var data2 = JSON.stringify(data1);
   var data3 = data2.replace(/\"]/g, "]");
@@ -53,3 +66,4 @@ if (LOCAL) {
 } else {
   dscc.subscribeToData(drawViz, {transform: dscc.objectTransform});
 }
+
