@@ -1,45 +1,42 @@
+
 const dscc = require('@google/dscc');
 const viz = require('@google/dscc-scripts/viz/initialViz.js');
 const local = require('./localMessage.js');
 const {Deck} = require ('@deck.gl/core');
 const  {ScatterplotLayer} = require('@deck.gl/layers');
-//const {Deck, ScatterplotLayer} = deck;
-//import {ScatterplotLayer} from '@deck.gl/layers';
-// change this to 'true' for local development
-// change this to 'false' before deploying
+// to deply change to false
 export const LOCAL = true;
-
-// create and add the canvas
-var canvasElement = document.createElement('canvas');
-// var ctx = canvasElement.getContext('2d');
-// canvasElement.id = 'container';
-// //document.body.appendChild(canvasElement);
 
 
 const drawViz = (data) => {
-  
-  var height = dscc.getHeight();
-  var width = dscc.getWidth();
-  // clear the canvas
-  var ctx = canvasElement.getContext('2d');
 
+
+  // create a canvas
+  var canvasElement = document.createElement('canvas');
+  var ctx = canvasElement.getContext('2d');
   // clear the canvas.
   ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-
   // set the canvas width and height
+  var height = dscc.getHeight();
+  var width = dscc.getWidth();
   ctx.canvas.width = dscc.getWidth();
   ctx.canvas.height = dscc.getHeight();
-  // code
+  // Deckgl code
   var data1 = data.tables.DEFAULT;
   var data2 = JSON.stringify(data1);
   var data3 = data2.replace(/\"]/g, "]");
   var data4 = data3.replace(/\["/g, "[");
   var data4 = JSON.parse(data4);
-  console.log(data4);
+  // get intial Vaues for view
+ var firstvalue = data1[0].coordinateid.toString();
+ var coordinates = firstvalue.split(",");
+ var longitudeView =parseFloat(coordinates[0]);
+ var latitudeView =parseFloat(coordinates[1]);
+  
   const INITIAL_VIEW_STATE = {
     bearing: 0,
-    longitude: 143.499772,
-    latitude:  -34.7773053,
+    longitude: longitudeView,
+    latitude:  latitudeView,
     zoom: 15,
     minZoom: 5,
     maxZoom: 20,
@@ -66,4 +63,3 @@ if (LOCAL) {
 } else {
   dscc.subscribeToData(drawViz, {transform: dscc.objectTransform});
 }
-
