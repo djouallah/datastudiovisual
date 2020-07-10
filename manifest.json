@@ -1,0 +1,24 @@
+{
+  "name": "Playing with DeckGL",
+  "organization": "mim",
+  "description": "Playing with DeckGL",
+  "logoUrl": "https://logo",
+  "organizationUrl": "https://url",
+  "supportUrl": "https://url",
+  "privacyPolicyUrl": "https://url",
+  "termsOfServiceUrl": "https://url",
+  "packageUrl": "https://url",
+  "devMode": false,
+  "components": [
+    {
+      "name": "DeckGL Points",
+      "description": "Playing with DeckGL",
+      "iconUrl": "https://url",
+      "resource": {
+        "js": "gs://communitymyviz/index.js",
+        "config": "gs://communitymyviz/index.json",
+        "css": "gs://communitymyviz/index.css"
+      }
+    }
+  ]
+}

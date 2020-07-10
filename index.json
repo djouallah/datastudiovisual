@@ -1,0 +1,62 @@
+{
+  "data": [
+    {
+      "id": "concepts",
+      "label": "date",
+      "elements": [
+        {
+          "id": "coordinateid",
+          "label": "coordinate",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1,
+            "supportedTypes": ["TEXT"]
+          }
+        },
+        {
+          "id": "colorid",
+          "label": "color",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "id": "sizeid",
+          "label": "size",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    }
+  ],
+  "style": [ {
+    "id": "data",
+    "label": "Data",
+    "elements": [
+      {
+        "type": "TEXTINPUT",
+        "id": "zoomparameter",
+        "label": "Iinitial Zoom",
+        "defaultValue": "5"
+      },
+      {
+        "type": "TEXTINPUT",
+        "id": "minZoomparameter",
+        "label": "Iinitial Zoom",
+        "defaultValue": "0"
+      },
+      {
+        "type": "TEXTINPUT",
+        "id": "maxZoomparameter",
+        "label": "Iinitial Zoom",
+        "defaultValue": "20"
+      }
+    ]
+  } ]
+}
