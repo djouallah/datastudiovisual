@@ -1,14 +1,14 @@
 {
-  "name": "Playing with DeckGL",
-  "organization": "mim",
-  "description": "Playing with DeckGL",
+  "name": "DeckGL Scatterplot",
+  "organization": "Mimoune Djouallah",
+  "description": "DeckGL Scatterplot Layer",
   "logoUrl": "https://logo",
-  "organizationUrl": "https://url",
-  "supportUrl": "https://url",
+  "organizationUrl": "https://datamonkeysite.com/",
+  "supportUrl": "https://datastudio.google.com/u/0/reporting/65758cec-07e2-404f-a1f9-cf57043ca48d/page/SVfXB",
   "privacyPolicyUrl": "https://url",
   "termsOfServiceUrl": "https://url",
-  "packageUrl": "https://url",
-  "devMode": false,
+  "packageUrl": "https://datastudio.google.com/u/0/reporting/65758cec-07e2-404f-a1f9-cf57043ca48d/page/SVfXB",
+  "devMode": true,
   "components": [
     {
       "name": "DeckGL Points",

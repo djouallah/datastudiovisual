@@ -10,17 +10,20 @@ export const message = {
       {
         coordinateid: ['20,54.1'],
         colorid: ['250,0,0'],
-        sizeid: [20],
+        sizeid: [2000],
+        tooltipid: ['2'],
+      },
+      {
+        coordinateid: ['20,54.1'],
+        colorid: ['250,255,0'],
+        sizeid: [6],
+        tooltipid: ['23,4'],
       },
       {
         coordinateid: ['20,54.1'],
         colorid: ['250,0,0'],
         sizeid: [6],
-      },
-      {
-        coordinateid: ['20,54.1'],
-        colorid: ['250,0,0'],
-        sizeid: [6],
+        tooltipid: ['44o'],
       },
     ],
   },
@@ -49,10 +52,20 @@ export const message = {
         concept: 'METRIC',
       },
     ],
+    tooltipid: [
+      {
+        id: 'qt_8isx6a0xtb',
+        name: 'tooltip',
+        type: 'TEXT',
+        concept: 'DIMENSION',
+      },
+    ],
   },
-  style: {"zoomparameter" : { "value": 5, "defaultValue": 5 },
-  "minZoomparameter" : { "value": 5, "defaultValue": 5 },
-  "maxZoomparameter" : { "value": 20, "defaultValue": 20 }},
+  style: {"zoomparameter" : { "value": 15, "defaultValue": 10 },
+  "minZoomparameter" : { "value": 0, "defaultValue": 5 },
+  "maxZoomparameter" : { "value": 20, "defaultValue": 20 },
+  "radiusScaleparameter" : { "value": 0.01, "defaultValue": 20 },
+  "radiusMaxPixelsparameter" : { "value": 10, "defaultValue": 100 }},
   
    
 };

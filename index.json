@@ -2,7 +2,7 @@
   "data": [
     {
       "id": "concepts",
-      "label": "date",
+      "label": "Data",
       "elements": [
         {
           "id": "coordinateid",
@@ -11,7 +11,7 @@
           "options": {
             "min": 1,
             "max": 1,
-            "supportedTypes": ["TEXT"]
+            "supportedTypes": ["GEO"]
           }
         },
         {
@@ -31,7 +31,17 @@
             "min": 1,
             "max": 1
           }
-        }
+         },
+        {
+            "id": "tooltipid",
+            "label": "tooltip",
+            "type": "DIMENSION",
+            "options": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        
       ]
     }
   ],
@@ -48,14 +58,26 @@
       {
         "type": "TEXTINPUT",
         "id": "minZoomparameter",
-        "label": "Iinitial Zoom",
+        "label": "Mim Zoom",
         "defaultValue": "0"
       },
       {
         "type": "TEXTINPUT",
         "id": "maxZoomparameter",
-        "label": "Iinitial Zoom",
-        "defaultValue": "20"
+        "label": "Max Zoom",
+        "defaultValue": "30"
+      },
+      {
+        "type": "TEXTINPUT",
+        "id": "radiusScaleparameter",
+        "label": "radiusScale",
+        "defaultValue": "10"
+      },
+      {
+        "type": "TEXTINPUT",
+        "id": "radiusMaxPixelsparameter",
+        "label": "radiusMaxPixels",
+        "defaultValue": "100"
       }
     ]
   } ]
