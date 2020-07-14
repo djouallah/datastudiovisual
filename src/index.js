@@ -47,6 +47,9 @@ var radiusMaxPixelsparameter =  data.style.radiusMaxPixelsparameter.value
 ? data.style.radiusMaxPixelsparameter.value
 : data.style.radiusMaxPixelsparameter.defaultValue;
 
+var DefaultColor = [0,0,0];
+var DefaultSize = 1;
+
 // clear canvas does not work
 // ctx.clearRect(0, 0, width, height);
 // ctx.beginPath();   
@@ -100,8 +103,8 @@ new Deck({
       data : data4,
       radiusScale   : radiusScaleparameter,
       getPosition: d => d.coordinateid,
-      getRadius:d => d.sizeid,
-      getFillColor: d => d.colorid,
+      getRadius:d => (d.sizeid == null ? DefaultSize : d.sizeid ) ,
+      getFillColor: d => (d.colorid == null ? DefaultColor : d.colorid),
       radiusMinPixels: 1,
       radiusMaxPixels: radiusMaxPixelsparameter,
       pickable: true,
@@ -109,7 +112,7 @@ new Deck({
     })
   ],
    
-  getTooltip: ({object}) => object && `${object.tooltipid}`
+  getTooltip: ({object}) => object && `${object.tooltipid == null ? object.coordinateid : object.tooltipid}`
   
 });
 };

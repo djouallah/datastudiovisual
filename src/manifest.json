@@ -1,19 +1,19 @@
 {
-  "name": "DeckGL Scatterplot",
+  "name": "Yet Another Map",
   "organization": "Mimoune Djouallah",
   "description": "DeckGL Scatterplot Layer",
-  "logoUrl": "https://logo",
+  "logoUrl": "https://raw.githubusercontent.com/djouallah/datastudiovisual/master/img/deckglpoint.PNG",
   "organizationUrl": "https://datamonkeysite.com/",
-  "supportUrl": "https://datastudio.google.com/u/0/reporting/65758cec-07e2-404f-a1f9-cf57043ca48d/page/SVfXB",
-  "privacyPolicyUrl": "https://url",
-  "termsOfServiceUrl": "https://url",
+  "supportUrl": "https://datastudio.google.com/u/0/reporting/65758cec-07e2-404f-a1f9-cf57043ca48d/page/Gq3XB",
+  "privacyPolicyUrl": "https://datastudio.google.com/u/0/reporting/65758cec-07e2-404f-a1f9-cf57043ca48d/page/To3XB",
+  "termsOfServiceUrl": "https://datastudio.google.com/u/0/reporting/65758cec-07e2-404f-a1f9-cf57043ca48d/page/jr3XB",
   "packageUrl": "https://datastudio.google.com/u/0/reporting/65758cec-07e2-404f-a1f9-cf57043ca48d/page/SVfXB",
-  "devMode": true,
+  "devMode": false,
   "components": [
     {
-      "name": "DeckGL Points",
-      "description": "Playing with DeckGL",
-      "iconUrl": "https://url",
+      "name": "Yet Another Map",
+      "description": "DeckGL Scatterplot Layer",
+      "iconUrl": "https://raw.githubusercontent.com/djouallah/datastudiovisual/master/img/deckglpoint.PNG",
       "resource": {
         "js": "gs://communitymyviz/index.js",
         "config": "gs://communitymyviz/index.json",
