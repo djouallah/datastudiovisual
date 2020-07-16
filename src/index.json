@@ -24,7 +24,7 @@
         },
         {
           "id": "colorid",
-          "label": "color",
+          "label": "Category",
           "type": "DIMENSION",
           "options": {
             "min": 0,

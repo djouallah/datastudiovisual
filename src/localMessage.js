@@ -7,10 +7,10 @@
 export const message = {
   tables: {
     DEFAULT: [
-      {lng: [],
-        lat: [],
-        colorid: ['250,0,0'],
-        sizeid: [300],
+      {lng: [20],
+        lat: [54.113],
+        colorid: ['250,250,0'],
+        sizeid: [10],
         
         
        
@@ -19,14 +19,16 @@ export const message = {
       {
         lng: [20],
         lat: [54.111],
-        colorid: ['0,250,0'],
+        colorid: ['250,2,0'],
+        sizeid: [200],
         
         
       },
       {
         lng: [20],
         lat: [54.112],
-        colorid: ['0,0,250'],
+        colorid: ['250,man,35'],
+        sizeid: [300],
         
        
       },
