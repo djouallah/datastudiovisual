@@ -5,8 +5,17 @@
       "label": "Data",
       "elements": [
         {
-          "id": "coordinateid",
-          "label": "coordinate Lng,Lat (Required)",
+          "id": "lng",
+          "label": "Longitude",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "id": "lat",
+          "label": "Latitude",
           "type": "DIMENSION",
           "options": {
             "min": 1,
@@ -52,7 +61,7 @@
         "type": "TEXTINPUT",
         "id": "zoomparameter",
         "label": "Iinitial Zoom",
-        "defaultValue": "5"
+        "defaultValue": "3"
       },
       {
         "type": "TEXTINPUT",
@@ -64,19 +73,31 @@
         "type": "TEXTINPUT",
         "id": "maxZoomparameter",
         "label": "Max Zoom",
-        "defaultValue": "30"
+        "defaultValue": "20"
       },
       {
         "type": "TEXTINPUT",
         "id": "radiusScaleparameter",
         "label": "radiusScale",
-        "defaultValue": "10"
+        "defaultValue": "100"
+      },
+      {
+        "type": "TEXTINPUT",
+        "id": "radiusMinPixelsparameter",
+        "label": "radiusMinPixels",
+        "defaultValue": "1"
       },
       {
         "type": "TEXTINPUT",
         "id": "radiusMaxPixelsparameter",
         "label": "radiusMaxPixels",
         "defaultValue": "100"
+      },
+      {
+        "type": "TEXTINPUT",
+        "id": "Pitchparameter",
+        "label": "Pitch",
+        "defaultValue": "1"
       }
     ]
   } ]

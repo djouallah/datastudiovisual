@@ -43,43 +43,61 @@ var radiusScaleparameter =  data.style.radiusScaleparameter.value
 ? data.style.radiusScaleparameter.value
 : data.style.radiusScaleparameter.defaultValue;
 
+var radiusMinPixelsparameter =  data.style.radiusMinPixelsparameter.value
+? data.style.radiusMinPixelsparameter.value
+: data.style.radiusMinPixelsparameter.defaultValue;
+
 var radiusMaxPixelsparameter =  data.style.radiusMaxPixelsparameter.value
 ? data.style.radiusMaxPixelsparameter.value
 : data.style.radiusMaxPixelsparameter.defaultValue;
 
-var DefaultColor = [0,0,0];
+var Pitchparameter =  data.style.Pitchparameter.value
+? data.style.Pitchparameter.value
+: data.style.Pitchparameter.defaultValue;
+
+var DefaultColor = [0,0,250];
 var DefaultSize = 1;
 
 // clear canvas does not work
 // ctx.clearRect(0, 0, width, height);
 // ctx.beginPath();   
   // Deckgl code
-var data1 = data.tables.DEFAULT;
-var data2 = JSON.stringify(data1);
-var data3 = data2.replace(/\"]/g, "]");
-var data31 = data3.replace(/\["/g, "[");
-var datax = data31.replace(/"tooltipid":\[(.*?)\]/gm,  "\"tooltipid\":[\"$1\"]");
-//console.log(data1);
 
-var data4 = JSON.parse(datax);
-//console.log(data4);
+
+
+var vizData = data.tables.DEFAULT.map(d => {
+  return {
+    
+      lat: d.lat[0] ,
+      lng: d.lng[0],
+      sizeid:  d.sizeid && d.sizeid[0],
+      colorid: d.colorid && d.colorid[0],
+      tooltipid : d.tooltipid && d.tooltipid[0] ,
+  };
+});
+
+
+
+//console.log(d.colorid);
   // get intial Vaues for view
 let startloop0 = 0;
 let startloop1 = 0;
 let nbritem = 0;
-data1.forEach((item) => {
-  var tt = item.coordinateid.toString();
-  var coordinatesx = tt.split(",");
-  var xxx =parseFloat(coordinatesx[0]);
-  var yyy =parseFloat(coordinatesx[1]);
+let counter =0;
+vizData.forEach((item) => {
+  var xxx =parseFloat(item.lng) || 0;
+  var yyy =parseFloat(item.lat) || 0;
   startloop0=xxx+startloop0;
-  nbritem=nbritem+1;
+  if ( xxx == 0 ) {counter =0} else {counter =1};
+  nbritem=nbritem+counter;
   startloop1=yyy+startloop1;
+  
 });
-
+console.log(nbritem);
 var longitudeView =startloop0/nbritem;
 var latitudeView =startloop1/nbritem;
-//console.log(longitudeView,latitudeView,zoomparameter,minZoomparameter,maxZoomparameter)
+  
+//console.log(nbritem,longitudeView,latitudeView,zoomparameter,minZoomparameter,maxZoomparameter)
   
   const INITIAL_VIEW_STATE = {
     
@@ -89,7 +107,7 @@ var latitudeView =startloop1/nbritem;
     zoom: zoomparameter,
     minZoom: minZoomparameter,
     maxZoom: maxZoomparameter,
-    pitch: 45,
+    pitch: Pitchparameter,
     
   };
 new Deck({
@@ -100,19 +118,19 @@ new Deck({
   controller: true,
   layers: [
     new ScatterplotLayer({
-      data : data4,
+      data : vizData,
       radiusScale   : radiusScaleparameter,
-      getPosition: d => d.coordinateid,
-      getRadius:d => (d.sizeid == null ? DefaultSize : d.sizeid ) ,
-      getFillColor: d => (d.colorid == null ? DefaultColor : d.colorid),
-      radiusMinPixels: 1,
+      getPosition: d => [d.lng,d.lat],
+      getRadius:d => (d.sizeid || DefaultSize) ,
+      getFillColor: d => ( d.colorid || DefaultColor),
+      radiusMinPixels: radiusMinPixelsparameter,
       radiusMaxPixels: radiusMaxPixelsparameter,
       pickable: true,
       
     })
   ],
    
-  getTooltip: ({object}) => object && `${object.tooltipid == null ? object.coordinateid : object.tooltipid}`
+  getTooltip: ({object}) => object && `${object.tooltipid == null ? [object.lng,object.lat] : object.tooltipid }`
   
 });
 };

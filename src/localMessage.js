@@ -7,34 +7,49 @@
 export const message = {
   tables: {
     DEFAULT: [
-      {
-        coordinateid: ['20,54.1'],
+      {lng: [],
+        lat: [],
         colorid: ['250,0,0'],
-        sizeid: [2000],
-        tooltipid: ['2'],
+        sizeid: [300],
+        
+        
+       
+        
       },
       {
-        coordinateid: ['20,54.1'],
-        colorid: ['250,255,0'],
-        sizeid: [6],
-        tooltipid: ['23,4'],
+        lng: [20],
+        lat: [54.111],
+        colorid: ['0,250,0'],
+        
+        
       },
       {
-        coordinateid: ['20,54.1'],
-        colorid: ['250,0,0'],
-        sizeid: [6],
-        tooltipid: ['44o'],
+        lng: [20],
+        lat: [54.112],
+        colorid: ['0,0,250'],
+        
+       
       },
     ],
   },
   fields: {
-    coordinateid: [
+    lng: [
       {
-        id: 'qt_nzqx6a0xvb',
-        name: 'Age Group',
-        type: 'TEXT',
+        id: 'qt_nzqx6affxvb',
+        name: 'lng',
+        type: 'NUMBER',
         concept: 'DIMENSION',
       },
+      
+    ],
+    lat: [
+      {
+        id: 'qt_nzttx6a0xvb',
+        name: 'lat',
+        type: 'NUMBER',
+        concept: 'DIMENSION',
+      },
+      
     ],
     colorid: [
       {
@@ -64,8 +79,10 @@ export const message = {
   style: {"zoomparameter" : { "value": 15, "defaultValue": 10 },
   "minZoomparameter" : { "value": 0, "defaultValue": 5 },
   "maxZoomparameter" : { "value": 20, "defaultValue": 20 },
-  "radiusScaleparameter" : { "value": 0.01, "defaultValue": 20 },
-  "radiusMaxPixelsparameter" : { "value": 10, "defaultValue": 100 }},
+  "radiusScaleparameter" : { "value": 1000, "defaultValue": 20 },
+  "radiusMinPixelsparameter" : { "value": 1, "defaultValue": 1 },
+  "radiusMaxPixelsparameter" : { "value": 10, "defaultValue": 100 },
+  "Pitchparameter" : { "value": 1, "defaultValue": 45 }},
   
    
 };

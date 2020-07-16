@@ -11,13 +11,14 @@
   "devMode": false,
   "components": [
     {
+      "id": "yetanothermap",
       "name": "Yet Another Map",
       "description": "DeckGL Scatterplot Layer",
       "iconUrl": "https://raw.githubusercontent.com/djouallah/datastudiovisual/master/img/deckglpoint.PNG",
       "resource": {
-        "js": "gs://communitymyviz/index.js",
-        "config": "gs://communitymyviz/index.json",
-        "css": "gs://communitymyviz/index.css"
+        "js": "gs://devvisual/index.js",
+        "config": "gs://devvisual/index.json",
+        "css": "gs://devvisual/index.css"
       }
     }
   ]
